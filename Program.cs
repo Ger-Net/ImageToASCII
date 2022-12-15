@@ -11,7 +11,11 @@ namespace ASCII
 {
     class Program
     {
-        private const string FILE_PATH = " ";
+        //private const string FILE_PATH = " "; TODO
+
+
+        private const int CONSOLE_WIDTH = 951;
+        private const int CONSOLE_HEIGHT = 500;
 
         private const int MAX_WIDTH = 700;
         private const double WIDTH_OFFSET = 1.5;
@@ -20,10 +24,16 @@ namespace ASCII
         [STAThread]
         private static void Main(string[] args)
         {
+            MessageBox.Show("Change the font and its size as desired","Warning!");
+
             OpenFileDialog openFileDialog = new OpenFileDialog()
             {
                 Filter = "Images | *.bmp; *.png; *.jpg; *.JPEG "
             };
+
+            Console.BufferHeight = CONSOLE_HEIGHT;
+            Console.BufferWidth = CONSOLE_WIDTH;
+            
 
             while (true)
             {
@@ -48,10 +58,6 @@ namespace ASCII
 
                 Console.SetCursorPosition(0, 0);
 
-                using (var stream = new FileStream())
-                {
-
-                }
             }    
         }
         
